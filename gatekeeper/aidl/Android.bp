@@ -11,7 +11,7 @@ aidl_interface {
     name: "android.hardware.gatekeeper",
     vendor_available: true,
     imports: [
-        "android.hardware.security.keymint-V3",
+        "android.hardware.security.keymint-V1",
     ],
     srcs: ["android/hardware/gatekeeper/*.aidl"],
     stability: "vintf",
@@ -20,21 +20,17 @@ aidl_interface {
             platform_apis: true,
         },
         ndk: {
-            apps_enabled: false,
+            apps_enabled: true,
+            vndk: {
+                enabled: true,
+            },
         },
         cpp: {
-            enabled: false,
+            enabled: true,
         },
         rust: {
             enabled: true,
         },
     },
-    versions_with_info: [
-        {
-            version: "1",
-            imports: ["android.hardware.security.keymint-V3"],
-        },
-    ],
-    frozen: true,
-
+    versions: ["1"],
 }

@@ -35,8 +35,8 @@ package android.hardware.boot;
 @Backing(type="int") @VintfStability
 enum MergeStatus {
   NONE = 0,
-  UNKNOWN,
-  SNAPSHOTTED,
-  MERGING,
-  CANCELLED,
+  UNKNOWN = 1,
+  SNAPSHOTTED = 2,
+  MERGING = 3,
+  CANCELLED = 4,
 }

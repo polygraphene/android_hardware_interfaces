@@ -184,7 +184,7 @@ class BootControlClientHIDL final : public BootControlClient {
         }
     }
     int32_t GetNumSlots() const {
-        const auto ret = module_v1_->getNumberSlots();
+        auto ret = module_v1_->getNumberSlots();
         if (!ret.isOk()) {
             LOG(ERROR) << __FUNCTION__ << " failed " << ret.description();
         }
@@ -192,7 +192,7 @@ class BootControlClientHIDL final : public BootControlClient {
     }
 
     int32_t GetCurrentSlot() const {
-        const auto ret = module_v1_->getCurrentSlot();
+        auto ret = module_v1_->getCurrentSlot();
         if (!ret.isOk()) {
             LOG(ERROR) << __FUNCTION__ << " failed " << ret.description();
         }
@@ -212,7 +212,7 @@ class BootControlClientHIDL final : public BootControlClient {
     }
 
     std::optional<bool> IsSlotBootable(int32_t slot) const {
-        const auto ret = module_v1_->isSlotBootable(slot);
+        auto ret = module_v1_->isSlotBootable(slot);
         if (!ret.isOk()) {
             LOG(ERROR) << __FUNCTION__ << "(" << slot << ")"
                        << " failed " << ret.description();
@@ -265,7 +265,7 @@ class BootControlClientHIDL final : public BootControlClient {
     }
 
     std::optional<bool> IsSlotMarkedSuccessful(int32_t slot) const {
-        const auto ret = module_v1_->isSlotMarkedSuccessful(slot);
+        auto ret = module_v1_->isSlotMarkedSuccessful(slot);
         if (!ret.isOk()) {
             LOG(ERROR) << __FUNCTION__ << "(" << slot << ")"
                        << " failed " << ret.description();
@@ -283,7 +283,7 @@ class BootControlClientHIDL final : public BootControlClient {
             LOG(ERROR) << __FUNCTION__ << " is unsupported, requires at least boot v1.1";
             return MergeStatus::UNKNOWN;
         }
-        const auto ret = module_v1_1_->getSnapshotMergeStatus();
+        auto ret = module_v1_1_->getSnapshotMergeStatus();
         if (!ret.isOk()) {
             LOG(ERROR) << __FUNCTION__ << " failed " << ret.description();
         }
@@ -310,7 +310,7 @@ class BootControlClientHIDL final : public BootControlClient {
             LOG(ERROR) << __FUNCTION__ << " is unsupported, requires at least boot v1.2";
             return -1;
         }
-        const auto ret = module_v1_2_->getActiveBootSlot();
+        auto ret = module_v1_2_->getActiveBootSlot();
         if (!ret.isOk()) {
             LOG(ERROR) << __FUNCTION__ << " failed " << ret.description();
         }

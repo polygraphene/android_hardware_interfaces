@@ -26,17 +26,17 @@ enum MergeStatus {
     /**
      * The merge status could not be determined.
      */
-    UNKNOWN,
+    UNKNOWN = 1,
     /**
      * Partitions are being snapshotted, but no merge has been started.
      */
-    SNAPSHOTTED,
+    SNAPSHOTTED = 2,
     /**
      * At least one partition has merge is in progress.
      */
-    MERGING,
+    MERGING = 3,
     /**
      * A merge was in progress, but it was canceled by the bootloader.
      */
-    CANCELLED,
+    CANCELLED = 4,
 }

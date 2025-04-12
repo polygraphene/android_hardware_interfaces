@@ -84,20 +84,20 @@ prebuilt_etc {
     installable: false,
 }
 
-apex {
-    name: "com.android.hardware.boot",
-    vendor: true,
-    manifest: "apex_manifest.json",
-    file_contexts: "apex_file_contexts",
-    key: "com.android.hardware.key",
-    certificate: ":com.android.hardware.certificate",
-    updatable: false,
-
-    binaries: [
-        "android.hardware.boot-service.default",
-    ],
-    prebuilts: [
-        "android.hardware.boot-service.default.rc",
-        "android.hardware.boot-service.default.xml",
-    ],
-}
+//apex {
+//    name: "com.android.hardware.boot",
+//    vendor: true,
+//    manifest: "apex_manifest.json",
+//    file_contexts: "apex_file_contexts",
+//    key: "com.android.hardware.key",
+//    certificate: ":com.android.hardware.certificate",
+//    updatable: false,
+//
+//    binaries: [
+//        "android.hardware.boot-service.default",
+//    ],
+//    prebuilts: [
+//        "android.hardware.boot-service.default.rc",
+//        "android.hardware.boot-service.default.xml",
+//    ],
+//}

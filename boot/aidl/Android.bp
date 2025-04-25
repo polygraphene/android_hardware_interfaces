@@ -28,6 +28,7 @@ aidl_interface {
     vendor_available: true,
     srcs: ["android/hardware/boot/*.aidl"],
     stability: "vintf",
+    recovery_available: true,
     backend: {
         java: {
             sdk_version: "module_current",
